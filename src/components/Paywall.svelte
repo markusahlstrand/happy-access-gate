@@ -1,8 +1,10 @@
+<svelte:options tag="paywall-component" />
+
 <script>
-  import { Button } from "$lib/components/ui/button";
-  import { Card } from "$lib/components/ui/card";
-  import { RadioGroup, RadioGroupItem } from "$lib/components/ui/radio-group";
-  import { Label } from "$lib/components/ui/label";
+  import { Button } from "@/components/ui/button";
+  import { Card } from "@/components/ui/card";
+  import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+  import { Label } from "@/components/ui/label";
   import { Check } from "lucide-react";
 
   let selectedOption = "6months";
@@ -37,7 +39,7 @@
     </li>
   </ul>
 
-  <RadioGroup value={selectedOption} onValueChange={(value) => selectedOption = value}>
+  <RadioGroup value={selectedOption} on:change={(e) => selectedOption = e.target.value}>
     <div class="space-y-2 border rounded-md p-4">
       <div class="flex items-center space-x-2">
         <RadioGroupItem value="6months" id="6months" />
